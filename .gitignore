@@ -1,1 +1,35 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
 
+# Virtual environment directory
+venv/
+env/
+ENV/
+.venv/
+
+# Ignore environment variable files (for security)
+.env
+
+# Cache files and logs
+*.log
+*.pot
+*.pyc
+
+# Jupyter Notebooks checkpoints (if you use Jupyter)
+.ipynb_checkpoints/
+
+# MacOS specific
+.DS_Store
+
+# Ignore database files (optional if you're using SQLite locally for development)
+*.sqlite3
+
+# Coverage reports
+htmlcov/
+.coverage
+.tox/
+
+# MySQL dumps (if created)
+*.sql
