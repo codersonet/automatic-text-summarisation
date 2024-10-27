@@ -5,10 +5,12 @@ from transformers import pipeline
 app = Flask(__name__)
 CORS(app)
 
+# Load the summarization pipeline
 summarizer = pipeline("summarization")
 
-# Different summarization styles
+# Function to summarize based on the selected filter
 def summarize_based_on_filter(text, filter_type):
+    # Adjust max_length and min_length based on the desired summarization style
     if filter_type == "bullets":
         return summarizer(text, max_length=150, min_length=30, do_sample=False)[0]['summary_text']
     elif filter_type == "crisp":
@@ -22,7 +24,7 @@ def summarize_based_on_filter(text, filter_type):
     elif filter_type == "letter":
         return summarizer(text, max_length=250, min_length=120, do_sample=False)[0]['summary_text']
     else:
-        # Default to bullets if filter is unknown
+        # Default to bullets if the filter is unknown
         return summarizer(text, max_length=150, min_length=30, do_sample=False)[0]['summary_text']
 
 @app.route('/summarize', methods=['POST'])
