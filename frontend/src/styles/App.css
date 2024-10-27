@@ -1,3 +1,4 @@
+/* Overall Styling */
 body {
   margin: 0;
   padding: 0;
@@ -6,21 +7,74 @@ body {
   color: #d1d1d1;
 }
 
-.app-container {
+/* Navbar Styling */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.7); /* Blur effect */
+  backdrop-filter: blur(10px);
+  color: white;
+  padding: 20px;
   display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+}
+
+.navbar h1 {
+  font-size: 24px;
+  margin-left: 20px;
+}
+
+.filter-container {
+  margin-right: 20px;
+}
+
+.filter-container label {
+  margin-right: 10px;
+  font-size: 16px;
+}
+
+#filter-select {
+  padding: 5px;
+  border-radius: 5px;
+  background-color: #1b1e2a;
+  color: white;
+  border: none;
+  font-size: 16px;
+}
+
+/* Layout Styling */
+.app-container {
+  padding-top: 100px; /* Push content below navbar */
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: 100vh;
 }
 
-.input-section, .output-section {
-  flex: 1;
+/* Input/Output Sections */
+.content-container {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  width: 80%;
+  justify-content: space-between;
 }
 
+.input-section, .output-section {
+  width: 45%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  border: 1px solid white;
+  border-radius: 10px;
+  background-color: rgba(27, 30, 42, 0.5); /* Block background */
+}
+
+/* Textarea */
 textarea {
-  width: 80%;
+  width: 100%;
   height: 200px;
   background-color: #1b1e2a;
   color: white;
@@ -29,8 +83,10 @@ textarea {
   margin-bottom: 20px;
   font-size: 16px;
   resize: none;
+  border-radius: 5px;
 }
 
+/* Summarize Button */
 button {
   padding: 10px 20px;
   background-color: #007bff;
@@ -38,18 +94,19 @@ button {
   border: none;
   cursor: pointer;
   font-size: 16px;
+  border-radius: 5px;
 }
 
 button:disabled {
   background-color: #555;
 }
 
+/* Summary Output Box */
 .summary-box {
-  width: 80%;
+  width: 100%;
   padding: 20px;
   background-color: #1b1e2a;
   border-radius: 10px;
   min-height: 200px;
   text-align: left;
 }
-
